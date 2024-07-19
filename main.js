@@ -1,19 +1,24 @@
-window.onload = function() {
-    const lang = document.documentElement.lang;
-    const languageSelect = document.getElementById('language');
-    const question = document.getElementById('question');
+function switchScreen() {
+    const screen1 = document.getElementById('screen-1');
+    const screen2 = document.getElementById('screen-2');
 
-    if (lang === 'es') {
-        languageSelect.innerHTML = `
-            <option value="1">Inglés</option>
-            <option value="2" selected>Español</option>
-        `;
-        question.textContent = 'Escribe tu nombre';
-    } else if (lang === 'en') {
-        languageSelect.innerHTML = `
-            <option value="1" selected>English</option>
-            <option value="2">Spanish</option>
-        `;
-        question.textContent = 'Write your name';
-    }
+    screen1.style.display = 'none';
+    screen2.style.display = 'block';
+
+    happybirthday();
+}
+
+function happybirthday() {
+    let audio = new Audio('utils/happybirthdaysong.mp3');
+    audio.play();
+
+    let timer = 0;
+    let interval = setInterval(() => {
+        timer++;
+        if (timer === 15) {
+            clearInterval(interval);
+            const message = document.getElementById('message');
+            message.textContent = 'Make a wish and blow the candle!';
+        }
+    }, 1000);
 }

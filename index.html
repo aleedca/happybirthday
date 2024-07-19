@@ -5,24 +5,49 @@
     <script src="main.js"></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.cdnfonts.com/css/bubble-boba" rel="stylesheet">
-                
-                
 </head>
 
 <body>
     <div>
-        <select id="language"></select>
-        <div id="pantalla1" class="screen-1">
+        <div id="screen-1" class="screen-1">
             <div class="container">
-                <h1 id="question"></h1>
+                <h1 id="question">Escribe tu nombre</h1>
                 <input type="text" id="name"></br></br></br>
-                <button onclick="saludar()">Ingresar</button>
+                <button onclick="switchScreen()">Ingresar</button>
             </div>
         </div>
-        <div id="pantalla2" class="screen-2">
-            <h1 id="saludo"></h1>
+        <div id="screen-2" class="screen-2">
+            <div>
+                <div class="happy">
+                    <div class="balloon balloon1 balloon-anim1"></div>
+                    <div class="balloon balloon2 balloon-anim6"></div>
+                    <div class="balloon balloon3 balloon-anim3"></div>
+                    <div class="balloon balloon4 balloon-anim4"></div>
+                    <div class="balloon balloon5 balloon-anim5"></div>
+                </div>
+                <div class="birthday">
+                    <div class="balloon balloon3 balloon-anim6"></div>
+                    <div class="balloon balloon1 balloon-anim2"></div>
+                    <div class="balloon balloon4 balloon-anim1"></div>
+                    <div class="balloon balloon2 balloon-anim6"></div>
+                    <div class="balloon balloon1 balloon-anim4"></div>
+                    <div class="balloon balloon3 balloon-anim5"></div>
+                    <div class="balloon balloon2 balloon-anim1"></div>
+                    <div class="balloon balloon4 balloon-anim6"></div>
+                </div>
+            </div>
+            <div id="message" class="message"> </div>
+            <div class="birthday-cake">
+                <div class="holder"></div>
+                <div class="shadow"></div>
+                <div class="cake">
+                    <div class="chocolate"></div>
+                </div>
+                <div class="candle"></div>
+                <div class="flame"></div>
+            </div>
+            </div>
         </div>
-    </div>
 </body>
 
 </html>

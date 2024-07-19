@@ -1,9 +1,25 @@
-*{
-    font-family: 'Open Sans', sans-serif;
+:root {
+    --font-1: 'Open Sans', sans-serif;
+    --font-2: 'Comic Sans MS', sans-serif;
+    --font-3: 'Roboto', sans-serif;
+
+    --balloon1-bg-color: #eaeaeae6;
+    --balloon2-bg-color: #e8dab2e6;
+    --balloon3-bg-color: #dd6e42e3;
+    --balloon4-bg-color: #4f6d7ad6;
+    --balloon5-bg-color: #eaeaeae6;
+    --bg-color: #c0d6df;
+
+    --balloon-anim-1: balloon1 15s ease infinite;
+    --balloon-anim-2: balloon2 5s ease infinite;
+    --balloon-anim-3: balloon3 10s ease infinite;
+    --balloon-anim-4: balloon4 5s ease infinite;
+    --balloon-anim-5: balloon5 15s ease infinite;
+    --balloon-anim-6: balloon7 5s ease infinite;
 }
 
-body{
-    background-color: rgba(255, 166, 41, 0.822);
+body {
+    background-color: var(--bg-color);
     color: #000000;
     margin: 0;
     padding: 0;
@@ -11,7 +27,7 @@ body{
     height: 100vh;
 }
 
-.screen-1{
+.screen-1 {
     margin: 0;
     padding: 0;
     display: flex;
@@ -22,37 +38,476 @@ body{
     height: 90vh;
 }
 
-.screen-1 .container{
-    width: 35%;
+.screen-1 .container {
+    width: 30%;
     height: 350px;
     padding: 80px 0;
     margin: auto;
-    background-color: #fafbe6;
+    background-color: #f9f6e0;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.screen-1 h1{
+.screen-1 h1 {
     margin-top: 20px;
     margin-bottom: 60px;
-    font-size: 50px;
+    font-size: 40px;
 }
 
-.screen-1 input{
+.screen-1 input {
+    width: 40%;
     margin-top: 20px;
     padding: 10px 40px;
-    border: 1px solid #5c5c5c;
-    border-radius: 5px;
+    border: none;
+    border-bottom: 3px solid #dd6e42e3;
     text-align: center;
     font-size: 20px;
+    outline: none;
+    background-color: #f9f6e0;
+    ;
 }
 
-.screen-1 button{
-    margin-top: 20px;
+.screen-1 button {
+    margin-top: 30px;
     padding: 10px 95px;
     border: none;
     border-radius: 5px;
-    background-color: rgb(80, 175, 84);
+    background-color: #dd6e42e3;
     font-size: 20px;
     cursor: pointer;
+}
+
+.screen-2 {
+    margin: 0;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.happy,
+.birthday {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+}
+
+.message {
+    position: absolute;
+    left: 60%;
+    top: 55%;
+    display: flex;
+    justify-content: center;
+    padding: 0px 150px;
+    font-size: 40px;
+    color: #4f6d7a;
+    font-family: "Comic Sans MS", Arial, Helvetica, sans-serif;
+}
+
+.balloon {
+    width: 69px;
+    height: 75px;
+    margin: 40px 20px 10px 20px;
+    border-radius: 80%;
+    position: relative;
+}
+
+.balloon::after {
+    position: absolute;
+    bottom: -16px;
+    left: 31px;
+    content: "\2713";
+    transform: rotate(180deg);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.happy .balloon::before,
+.birthday .balloon::before {
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(50% - 10px);
+    font-size: 30px;
+    color: #4f6d7a;
+    font-family: "Comic Sans MS", Arial, Helvetica, sans-serif;
+}
+
+.happy .balloon:nth-child(1)::before {
+    content: "H";
+}
+
+.happy .balloon:nth-child(2)::before {
+    content: "A";
+}
+
+.happy .balloon:nth-child(3)::before {
+    content: "P";
+}
+
+.happy .balloon:nth-child(4)::before {
+    content: "P";
+}
+
+.happy .balloon:nth-child(5)::before {
+    content: "Y";
+}
+
+.birthday .balloon:nth-child(1)::before {
+    content: "B";
+}
+
+.birthday .balloon:nth-child(2)::before {
+    content: "I";
+}
+
+.birthday .balloon:nth-child(3)::before {
+    content: "R";
+}
+
+.birthday .balloon:nth-child(4)::before {
+    content: "T";
+}
+
+.birthday .balloon:nth-child(5)::before {
+    content: "H";
+}
+
+.birthday .balloon:nth-child(6)::before {
+    content: "D";
+}
+
+.birthday .balloon:nth-child(7)::before {
+    content: "A";
+}
+
+.birthday .balloon:nth-child(8)::before {
+    content: "Y";
+}
+
+@keyframes balloon1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(-10deg);
+    }
+
+    50% {
+        transform: translate(0, 30px) rotate(10deg);
+    }
+}
+
+@keyframes balloon2 {
+
+    0%,
+    100% {
+        transform: translate(-20px, 40px) rotate(15deg);
+    }
+
+    50% {
+        transform: translate(0, -10px) rotate(-5deg);
+    }
+}
+
+@keyframes balloon3 {
+
+    0%,
+    100% {
+        transform: translate(-30px, 0) rotate(-10deg);
+    }
+
+    50% {
+        transform: translate(0, -20px) rotate(20deg);
+    }
+}
+
+@keyframes balloon4 {
+
+    0%,
+    100% {
+        transform: translate(-10px, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(0, 20px) rotate(30deg);
+    }
+}
+
+@keyframes balloon5 {
+
+    0%,
+    100% {
+        transform: translate(10px, 0) rotate(20deg);
+    }
+
+    50% {
+        transform: translate(0, 30px) rotate(-20deg);
+    }
+}
+
+@keyframes balloon6 {
+
+    0%,
+    100% {
+        transform: translate(-10px, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(0, 20px) rotate(30deg);
+    }
+}
+
+@keyframes balloon7 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(15deg);
+    }
+
+    50% {
+        transform: translate(0, 0) rotate(-15deg);
+    }
+}
+
+.balloon1 {
+    background: var(--balloon1-bg-color);
+    box-shadow: inset 10px 10px 10px #c7c3c3e6;
+}
+
+.balloon1::after {
+    color: var(--balloon1-bg-color);
+}
+
+.balloon2 {
+    background: var(--balloon2-bg-color);
+    box-shadow: inset 10px 10px 10px #d5c7a1;
+}
+
+.balloon2::after {
+    color: var(--balloon2-bg-color);
+}
+
+.balloon3 {
+    background: var(--balloon3-bg-color);
+    box-shadow: inset 10px 10px 10px #cf6840;
+}
+
+.balloon3::after {
+    color: var(--balloon3-bg-color);
+}
+
+.balloon4 {
+    background: var(--balloon4-bg-color);
+    box-shadow: inset 10px 10px 10px #4f6d7a;
+}
+
+.balloon4::after {
+    color: var(--balloon4-bg-color);
+}
+
+.balloon5 {
+    background: var(--balloon5-bg-color);
+    box-shadow: inset 10px 10px 10px #cbc8c8;
+}
+
+.balloon5::after {
+    color: var(--balloon5-bg-color);
+}
+
+.balloon-anim1 {
+    animation: var(--balloon-anim-1);
+}
+
+.balloon-anim2 {
+    animation: var(--balloon-anim-2);
+}
+
+.balloon-anim3 {
+    animation: var(--balloon-anim-3);
+}
+
+.balloon-anim4 {
+    animation: var(--balloon-anim-4);
+}
+
+.balloon-anim5 {
+    animation: var(--balloon-anim-5);
+}
+
+.balloon-anim6 {
+    animation: var(--balloon-anim-6);
+}
+
+.birthday-cake {
+    position: absolute;
+    top: 70%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+}
+.holder {
+    position: absolute;
+    width: 350px;
+    height: 20px;
+    border-radius: 100px;
+    background-color: #212F3C;
+    left: -140px;
+    top: 10px;
+}
+
+.holder:before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 150px;
+    background-color: #212F3C;
+    left: 130px;
+    top: 20px;
+}
+
+.holder:after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 135px;
+    border-radius: 30px 30px 0 0;
+    left: 65px;
+    top: 20px;
+    background-color: #c0d6df;
+    box-shadow: 125px 0 #c0d6df;
+}
+
+.shadow {
+    position: absolute;
+    width: 350px;
+    height: 20px;
+    border-radius: 50%;
+    top: 170px;
+    left: -135px;
+    background-color: rgba(0, 0, 0, 0.095);
+    z-index: 1;
+}
+
+.shadow:before {
+    content: "";
+    position: absolute;
+    background-color: #212F3C;
+    width: 150px;
+    height: 20px;
+    border-radius: 20px;
+    top: -10px;
+    left: 96px;
+}
+
+.cake {
+    position: absolute;
+    overflow: hidden;
+    width: 275px;
+    height: 140px;
+    background-color: #FAD7A0;
+    top: -130px;
+    left: -101px;
+    border-radius: 30px 30px 0 0;
+}
+
+.cake:before {
+    content: "";
+    background-color: #935116;
+    width: 275px;
+    height: 15px;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    box-shadow: 0 30px #935116;
+}
+
+.cake:after {
+    content: "";
+    position: absolute;
+    background-color: #573612;
+    width: 275px;
+    height: 40px;
+    left: 0;
+    box-shadow: inset 0 10px rgba(0, 0, 0, 0.07);
+}
+
+.chocolate {
+    position: absolute;
+    background-color: #573612;
+    width: 25px;
+    height: 45px;
+    top: 25px;
+    left: 0;
+    z-index: 2;
+    border-radius: 50px;
+    box-shadow: 
+    25px 2px #FAD7A0, 50px -10px #573612, 75px -5px #FAD7A0, 100px 3px #573612, 125px 0 #FAD7A0, 150px -5px #573612, 175px 3px #FAD7A0, 200px -5px #573612, 225px -10px #FAD7A0, 250px 4px #573612,
+    -25px 2px #FAD7A0, -50px -10px #573612, -75px -5px #FAD7A0, -100px 3px #573612, -125px 0 #FAD7A0, -150px -5px #573612, -175px 3px #FAD7A0, -200px -5px #573612, -225px -10px #FAD7A0, -250px 4px #573612;
+}
+
+.candle {
+    position: absolute;
+    width: 15px;
+    height: 70px;
+    background-color: white;
+    top: -200px;
+    left: 30px;
+    box-shadow: inset 0 -10px 0 #E74C3C;
+}
+
+.candle:before {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #E74C3C;
+    content: "";
+    top: 10px;
+    left:0;
+    box-shadow: 0 25px #E74C3C;
+}
+
+.candle:after {
+    content: "";
+    width: 2px;
+    height: 15px;
+    content: "";
+    position: absolute;
+    background-color: black;
+    top: -15px;
+    left: 6px;
+}
+
+.flame {
+    position: absolute;
+    background-color: #F4D03F;
+    opacity: 0.9;
+    box-shadow: inset 0 -5px 5px #D35400, 5px -5px 20px #FBFFA3;
+    width: 20px;
+    height: 30px;
+    top: -240px;
+    border-radius: 50%;
+    left: 26.5px;
+    animation: flame 0.6s infinite;
+    border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+    cursor: pointer;
+}
+
+@keyframes flame {
+
+    from,
+    to {
+        transform: scale(1, 1);
+    }
+
+    25% {
+        transform: scale(0.9, 1.1);
+    }
+
+    50% {
+        transform: scale(1.1, 0.9);
+    }
+
+    75% {
+        transform: scale(0.95, 1.05);
+    }
 }
